@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+.add-review {
+    padding: 10px;
+    margin-bottom: 25px;
+    outline: 2px solid $clr4;
+    form {
+        & > div {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            label {
+                margin-bottom: 5px;
+            }
+            input,
+            textarea {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            textarea {
+                resize: none;
+                height: 70px;
+            }
+        }
+        button {
+            align-self: flex-end;
+            background-color: $clr4;
+        }
+    }
+}

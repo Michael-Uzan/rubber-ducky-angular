@@ -1,3 +1,4 @@
+import { IReview } from "./IReview";
 
 export interface IDuck {
     _id?: string,
@@ -6,7 +7,6 @@ export interface IDuck {
     details: string,
     inStock: boolean,
     category: string,
-    img: string
-    // reviews : IReview[]
+    img: string,
 }
 

@@ -1,0 +1,11 @@
+@import "../../../../styles.scss";
+
+.review-preview {
+    margin-bottom: 15px;
+    outline: 2px solid rgba(0, 0, 0, 0.246);
+    padding: 10px;
+    p {
+        padding: 0;
+        margin: rem(9px) 0;
+    }
+}

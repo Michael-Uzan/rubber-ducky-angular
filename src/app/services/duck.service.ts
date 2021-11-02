@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { IDuck } from '../interfaces/IDuck.interface';
 import { IFilterBy } from '../interfaces/IFilterBy.interface';
 
-const DUCKS = [
+const DUCKS: IDuck[] = [
   {
     "_id": "5a56640269f443a5d64b32ca",
     "name": "Scary Rubber Duck",

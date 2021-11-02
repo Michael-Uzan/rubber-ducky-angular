@@ -1,0 +1,3 @@
+<section class="review-list" *ngIf="reviews">
+    <review-preview *ngFor="let review of reviews" [review]="review"></review-preview>
+</section>

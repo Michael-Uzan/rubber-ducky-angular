@@ -1,0 +1,14 @@
+<section class="add-review ">
+    <form (ngSubmit)="onSaveReview()" class="flex direction-col">
+        <div>
+            <label for="name">Name: </label>
+            <input type="search" id="name" name="name" [(ngModel)]="review.name" required>
+        </div>
+        <div>
+            <label for="description">Description: </label>
+            <textarea name="description" id="description" [(ngModel)]="review.description"></textarea>
+        </div>
+        <rating></rating>
+        <button>Add</button>
+    </form>
+</section>

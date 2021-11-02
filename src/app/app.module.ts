@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,12 @@ import { DuckDetailsComponent } from './pages/duck-details/duck-details.componen
 import { DuckProductsComponent } from './pages/duck-products/duck-products.component';
 import { SideBarFilterComponent } from './cmps/duck-app/side-bar-filter/side-bar-filter.component';
 import { DuckEditComponent } from './pages/duck-edit/duck-edit.component';
+import { ReviewComponent } from './cmps/duck-details/review/review.component';
+import { ReviewListComponent } from './cmps/duck-details/review-list/review-list.component';
+import { ReviewPreviewComponent } from './cmps/duck-details/review-preview/review-preview.component';
+import { RatingComponent } from './cmps/duck-details/rating/rating.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AddReviewComponent } from './cmps/duck-details/add-review/add-review.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +37,18 @@ import { DuckEditComponent } from './pages/duck-edit/duck-edit.component';
     DuckProductsComponent,
     SideBarFilterComponent,
     DuckEditComponent,
+    ReviewComponent,
+    ReviewListComponent,
+    ReviewPreviewComponent,
+    RatingComponent,
+    AddReviewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
