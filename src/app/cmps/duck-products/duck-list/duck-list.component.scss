@@ -1,0 +1,18 @@
+@import "../../../../assets/styles/setup/variables.scss";
+@import "../../../../assets/styles/setup/mixins.scss";
+
+.duck-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 560px) {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+    @include for-narrow-layout {
+        grid-template-columns:
+            1fr
+            1fr
+            1fr;
+    }
+}

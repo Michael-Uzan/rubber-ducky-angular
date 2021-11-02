@@ -1,9 +1,16 @@
+@import "../../../../assets/styles/setup/functions";
 .duck-preview {
+    &.out-of-stock {
+        img {
+            filter: opacity(0.4);
+        }
+    }
     h3 {
         font-family: RibeyeMarrow-Regular, SourceSansPro-Light, sans-serif;
     }
     p,
     h3 {
+        // font-size: rem(80px);
         font-size: 0.875rem;
     }
 }

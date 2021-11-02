@@ -1,10 +1,22 @@
 <section class="filter">
-    <input type="search" placeholder="Search Duck" [(ngModel)]="filterBy.name" (ngModelChange)="onSetFilter()">
-    <input type="number" placeholder="Max Price" [(ngModel)]="filterBy.maxPrice" (ngModelChange)="onSetFilter()">
-    <label for="only-stock">Only in stock</label>
-    <input id="only-stock" type="checkbox" [(ngModel)]="filterBy.onlyInStock" (ngModelChange)="onSetFilter()">
-    <!-- <select name="categories" multiple id="" [(ngModel)]="filterBy.categories" (ngModelChange)="onSetFilter()">
-        <option value="scary">Scary</option>
-        <option value="celebs">Celeberty</option>
-    </select> -->
+    <div class="form flex align-center">
+        <div>
+            <label for="search">Search: </label>
+            <input type="search" id="search" placeholder="Search duck" [(ngModel)]="filterBy.name"
+                (ngModelChange)="onSetFilter()">
+        </div>
+        <div>
+            <label for="price">Max price: </label>
+            <input type="number" id="price" placeholder="Max Price" [(ngModel)]="filterBy.maxPrice"
+                (ngModelChange)="onSetFilter()">
+        </div>
+        <div>
+            <input id="only-stock" type="checkbox" [(ngModel)]="filterBy.onlyInStock" (ngModelChange)="onSetFilter()">
+            <label for="only-stock"> Only in stock</label>
+        </div>
+        <!-- <select name="categories" multiple id="" [(ngModel)]="filterBy.categories" (ngModelChange)="onSetFilter()">
+            <option value="scary">Scary</option>
+            <option value="celebs">Celeberty</option>
+        </select> -->
+    </div>
 </section>

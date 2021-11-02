@@ -37,27 +37,29 @@
             }
         }
     }
-    .duck-list {
-        background-color: red;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        @include for-narrow-layout {
-            grid-template-columns:
-                1fr
-                1fr;
-        }
-        // @include for-normal-layout {
-        //     grid-template-columns:
-        //         1fr
-        //         minmax(auto, $narrow-breakpoint)
-        //         1fr;
-        // }
+    .ducks-home-preview {
+        .duck-list {
+            // background-color: red;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr;
+            // @include for-narrow-layout {
+            //     grid-template-columns:
+            //         1fr
+            //         1fr;
+            // }
+            // // @include for-normal-layout {
+            // //     grid-template-columns:
+            // //         1fr
+            // //         minmax(auto, $narrow-breakpoint)
+            // //         1fr;
+            // // }
 
-        @include for-wide-layout {
-            grid-template-columns:
-                1fr
-                1fr
-                1fr;
+            // @include for-wide-layout {
+            //     grid-template-columns:
+            //         1fr
+            //         1fr
+            //         1fr;
+            // }
         }
     }
 }

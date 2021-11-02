@@ -1,15 +1,26 @@
+@import "../../../assets/styles/setup/functions.scss";
+@import "../../../assets/styles/setup/mixins.scss";
+@import "../../../assets/styles/setup/variables.scss";
 .duck-products {
+    margin-left: 25px;
+    .description {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        @media (max-width: $normal-breakpoint) {
+            max-width: 720px;
+        }
+    }
+    a:hover {
+        color: $clr2;
+    }
     .main-content {
+        margin-top: 15px;
         display: flex;
         flex-direction: column;
 
         @media (min-width: 950px) {
             flex-direction: row;
             justify-content: space-between;
-        }
-        .duck-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 }

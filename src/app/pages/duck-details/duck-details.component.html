@@ -1,16 +1,20 @@
 <section class="duck-details">
-    <a routerLink="/rubber-ducks/products">Back</a>
-    <img src="{{duck.img}}">
-    <div>
-        <h1>{{duck.name}}</h1>
-        <p>€ {{duck.price}}</p>
-        <p>{{duck.details}}</p>
+    <section class="product-details flex">
+        <img src="{{duck.img}}">
         <div>
-            <img src="https://amsterdamduckstore.com/wp-content/uploads/2015/07/CE-approved.png">
-            <p>Approved by Communauté Européenne CE</p>
+            <h1>{{duck.name}}</h1>
+            <p class="price">€ {{duck.price}}</p>
+            <div class="{{inStock.class}}">{{inStock.txt}}</div>
+            <p>{{duck.details}}</p>
         </div>
-        <img src="https://amsterdamduckstore.com/wp-content/uploads/2015/07/Amsterdam-Duck-Store-Payment-Providers.png">
-        <div class="{{inStock.class}}">{{inStock.txt}}</div>
+    </section>
+    <div class="ce flex align-center justify-center">
+        <img src="https://amsterdamduckstore.com/wp-content/uploads/2015/07/CE-approved.png">
+        <p>Approved by Communauté Européenne CE</p>
+    </div>
+    <div class="flex justify-center">
+        <img class="visa"
+            src="https://amsterdamduckstore.com/wp-content/uploads/2015/07/Amsterdam-Duck-Store-Payment-Providers.png">
     </div>
     <div>
         <h2>Description</h2>

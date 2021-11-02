@@ -1,7 +1,7 @@
 // REM Functions
 @function rem($size) {
-    $remSize: $size / 14px;
-    @return ($remSize) * 1rem;
+    // $remSize: ($size / 14px);
+    @return ($size / 14px) * 1rem;
 }
 
 // EM Functions

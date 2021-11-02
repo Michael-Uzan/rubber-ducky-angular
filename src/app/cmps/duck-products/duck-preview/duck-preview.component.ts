@@ -13,4 +13,9 @@ export class DuckPreviewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get duckClass() {
+    if (!this.duck.inStock) return 'out-of-stock'
+    return ''
+  }
+
 }

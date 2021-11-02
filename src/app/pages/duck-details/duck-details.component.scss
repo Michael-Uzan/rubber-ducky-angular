@@ -1,6 +1,31 @@
 @import "../../../assets/styles/setup/variables.scss";
+@import "../../../assets/styles/setup/mixins.scss";
 
 .duck-details {
+    .product-details {
+        flex-direction: column;
+        margin-bottom: 15px;
+        .price {
+            padding: 0;
+        }
+        @include for-narrow-layout {
+            flex-direction: row;
+        }
+    }
+    .visa {
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+    .ce {
+        margin-bottom: 15px;
+        img {
+            width: 60px;
+        }
+        p {
+            padding: 0;
+        }
+    }
+
     .red {
         color: $clr1;
     }
