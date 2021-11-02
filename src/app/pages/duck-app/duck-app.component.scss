@@ -1,0 +1,15 @@
+.duck-products {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 950px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .duck-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

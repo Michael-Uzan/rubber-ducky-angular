@@ -1,0 +1,63 @@
+@import "../../../assets/styles/setup/variables.scss";
+@import "../../../assets/styles/setup/mixins.scss";
+.home {
+    img {
+        margin-bottom: 50px;
+    }
+    .desc {
+        text-align: center;
+        margin-left: 25px;
+        margin-right: 25px;
+        > :last-child {
+            font-weight: 700;
+        }
+    }
+    .get-started {
+        background-color: $clr1;
+        color: white;
+        text-align: center;
+        padding: 40px 60px;
+        h2 {
+            padding-bottom: 25px;
+        }
+        button {
+            padding: 6px 30px 6px 30px;
+            background-color: $clr1;
+            outline: 5px solid red;
+            &:hover {
+                background-color: rgba(255, 192, 203, 0.657);
+            }
+            p {
+                font-size: rem(20px);
+                margin: 0;
+                padding: 0;
+                color: black;
+                text-align: center;
+                font-weight: 800;
+            }
+        }
+    }
+    .duck-list {
+        background-color: red;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @include for-narrow-layout {
+            grid-template-columns:
+                1fr
+                1fr;
+        }
+        // @include for-normal-layout {
+        //     grid-template-columns:
+        //         1fr
+        //         minmax(auto, $narrow-breakpoint)
+        //         1fr;
+        // }
+
+        @include for-wide-layout {
+            grid-template-columns:
+                1fr
+                1fr
+                1fr;
+        }
+    }
+}

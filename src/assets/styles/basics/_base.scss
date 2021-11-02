@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+button,
+html,
+input,
+select,
+textarea {
+    font-family: OpenSans-Regular, SourceSansPro-Light, sans-serif;
+    color: $fontColor;
+    font-weight: 500;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin: 0 0 rem(8px);
+    line-height: 1em;
+    font-weight: 500;
+}
+
+p {
+    padding-bottom: 1rem;
+    line-height: 1.7em;
+    font-size: rem(14px);
+}
+
+h1 {
+    font-size: rem(30px);
+    font-family: RibeyeMarrow-Regular, SourceSansPro-Light, sans-serif;
+}
+
+h2 {
+    font-size: rem(26px);
+    font-family: RibeyeMarrow-Regular, SourceSansPro-Light, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+::selection {
+    color: $clr3;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
