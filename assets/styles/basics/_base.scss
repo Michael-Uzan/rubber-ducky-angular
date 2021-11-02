@@ -1,3 +1,6 @@
+@import "../setup/variables";
+@import "../setup/functions";
+
 * {
     box-sizing: border-box;
 }
@@ -59,7 +62,8 @@ a {
 }
 
 ::selection {
-    color: $clr3;
+    background-color: $clr3;
+    color: white;
 }
 
 input:focus-visible,

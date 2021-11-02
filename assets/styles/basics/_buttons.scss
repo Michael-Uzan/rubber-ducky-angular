@@ -1,5 +1,14 @@
+@import "../setup/functions";
 button {
     cursor: pointer;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: rem(14px);
+    font-weight: 600;
+    background-color: $clr2;
+    color: white;
+    &:hover {
+        opacity: 0.6;
+    }
 }

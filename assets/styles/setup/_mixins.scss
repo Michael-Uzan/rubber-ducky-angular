@@ -1,3 +1,5 @@
+@import "./variables";
+
 /* Breakpoint mixins */
 
 @mixin for-mobile-layout {
@@ -6,8 +8,13 @@
     }
 }
 
-@mixin for-narrow-layout {
+@mixin for-super-narrow-layout {
     @media (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+@mixin for-narrow-layout {
+    @media (min-width: $tablet-breakpoint) {
         @content;
     }
 }
