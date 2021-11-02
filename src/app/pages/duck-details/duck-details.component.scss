@@ -1,5 +1,6 @@
 @import "../../../assets/styles/setup/variables.scss";
 @import "../../../assets/styles/setup/mixins.scss";
+@import "../../../assets/styles/setup/functions";
 
 .duck-details {
     .product-details {
@@ -10,6 +11,9 @@
         }
         @include for-narrow-layout {
             flex-direction: row;
+        }
+        button {
+            margin-right: 15px;
         }
     }
     .visa {

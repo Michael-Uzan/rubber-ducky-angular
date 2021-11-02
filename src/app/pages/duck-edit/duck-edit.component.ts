@@ -11,6 +11,7 @@ import { DuckService } from 'src/app/services/duck.service';
 })
 export class DuckEditComponent implements OnInit {
   duck: IDuck
+  title: string
   subscription: Subscription
 
   constructor(private duckService: DuckService, private route: ActivatedRoute, private router: Router) { }
@@ -18,12 +19,15 @@ export class DuckEditComponent implements OnInit {
   ngOnInit(): void {
     this.subscription = this.route.data.subscribe(({ duck }) => {
       this.duck = duck || this.duckService.getEmptyDuck()
+      if (!duck) this.title = 'Add new duck'
+      else this.title = 'Edit duck'
     })
   }
 
-  async onSavePet() {
+  async onSaveDuck() {
+    if (!this.duck.name || !this.duck.price) return
     await this.duckService.save(this.duck).toPromise()
-    this.router.navigateByUrl('/rubber-ducks')
+    this.router.navigateByUrl('/rubber-ducks/products')
   }
 
   ngOnDestroy() {

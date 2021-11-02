@@ -1,4 +1,5 @@
 @import "../../../assets/styles/setup/variables.scss";
+@import "../../../assets/styles/setup/mixins";
 
 .main-header {
     margin-bottom: 40px;
@@ -6,8 +7,8 @@
         height: 45px;
         img {
             justify-self: flex-end;
-            width: 30px;
             color: white;
+            max-width: 30px;
         }
         background-color: $clr1;
     }
@@ -15,8 +16,11 @@
         display: flex;
         justify-content: space-between;
         .logo {
-            width: 350px;
             margin-left: 25px;
+            max-width: 150px;
+            @include for-narrow-layout {
+                max-width: 350px;
+            }
         }
         nav {
             display: flex;

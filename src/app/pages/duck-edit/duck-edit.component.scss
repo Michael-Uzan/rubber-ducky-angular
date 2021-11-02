@@ -1,0 +1,49 @@
+@import "../../../assets/styles/setup/mixins";
+
+.duck-edit {
+    margin-left: 25px;
+    h1 {
+        margin-bottom: 35px;
+        text-align: center;
+    }
+    .edit-container {
+        // margin: 0 auto;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        & > :first-child {
+            margin-bottom: 35px;
+        }
+        input[text],
+        textarea {
+            width: 240px;
+        }
+        textarea {
+            max-width: 250px;
+            max-height: 170px;
+            height: 80px;
+        }
+        img {
+            max-width: 250px;
+        }
+        @include for-narrow-layout {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            & > :first-child {
+                margin-right: 35px;
+            }
+        }
+    }
+    form {
+        div {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            label {
+                margin-right: 10px;
+            }
+        }
+    }
+}

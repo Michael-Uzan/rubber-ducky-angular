@@ -6,7 +6,12 @@
             <p class="price">€ {{duck.price}}</p>
             <div class="{{inStock.class}}">{{inStock.txt}}</div>
             <p>{{duck.details}}</p>
+            <div>
+                <button>Add to cart</button>
+                <button [routerLink]="['/edit', duck._id]">Edit</button>
+            </div>
         </div>
+
     </section>
     <div class="ce flex align-center justify-center">
         <img src="https://amsterdamduckstore.com/wp-content/uploads/2015/07/CE-approved.png">

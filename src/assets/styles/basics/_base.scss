@@ -62,7 +62,8 @@ a {
 }
 
 ::selection {
-    color: $clr3;
+    background-color: $clr3;
+    color: white;
 }
 
 input:focus-visible,

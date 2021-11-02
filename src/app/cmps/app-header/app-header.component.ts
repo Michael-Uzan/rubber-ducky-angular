@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DuckService } from 'src/app/services/duck.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private duckService: DuckService) { }
 
   ngOnInit() {
+  }
+
+  onShowAllDucks() {
+    this.duckService.setFilter({
+      name: '',
+      maxPrice: 100000,
+      onlyInStock: false,
+      category: '',
+    })
   }
 
 }

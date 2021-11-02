@@ -6,5 +6,9 @@
     li {
         margin-bottom: 7px;
         font-size: 0.875rem;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }

@@ -175,7 +175,7 @@ export class DuckService {
         (filterBy.onlyInStock ? duck.inStock : true)
     });
     if (filterBy.category) {
-      ducksToShow = this._ducksDb.filter((duck) => filterBy.category === duck.category)
+      ducksToShow = ducksToShow.filter((duck) => filterBy.category === duck.category)
     }
     this._ducks$.next(this._sort(ducksToShow))
   }
@@ -199,7 +199,7 @@ export class DuckService {
       details: '',
       inStock: true,
       category: '',
-      img: ''
+      img: 'https://m.media-amazon.com/images/I/61su4ZAG94L._AC_SX425_.jpg'
     }
   }
   // public deleteDuck(id: string) {

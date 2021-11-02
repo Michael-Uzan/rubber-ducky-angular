@@ -5,8 +5,8 @@
   <div class="botom-header">
     <img class="logo pointer" src="./././assets/img/logo.JPG" routerLink="">
     <nav>
-      <a routerLink="/rubber-ducks/products" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">Ducks</a>
+      <a routerLink="/rubber-ducks/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="onShowAllDucks()">Ducks</a>
       <a routerLink="user" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">User</a>
     </nav>
   </div>

@@ -1,3 +1,38 @@
 <section class="duck-edit" *ngIf="duck">
-
+    <h1>{{title}}</h1>
+    <section class="edit-container">
+        <form (ngSubmit)="onSaveDuck()" class="flex direction-col">
+            <div>
+                <label for="name">Name: </label>
+                <input type="search" id="name" name="name" [(ngModel)]="duck.name" required>
+            </div>
+            <div>
+                <label for="price">Price: </label>
+                <input type="number" id="price" name="price" [(ngModel)]="duck.price" required>
+            </div>
+            <div>
+                <label for="inStock">In stock? </label>
+                <input type="checkbox" id="inStock" name="inStock" [(ngModel)]="duck.inStock">
+            </div>
+            <div>
+                <label for="category">Category: </label>
+                <select name="category" id="category" [(ngModel)]="duck.category">
+                    <option value="">All</option>
+                    <option value="scary">Scary</option>
+                    <option value="music">Music</option>
+                    <option value="countries">Countries</option>
+                </select>
+            </div>
+            <div>
+                <label for="details">Details: </label>
+                <textarea name="details" id="details" [(ngModel)]="duck.details"></textarea>
+            </div>
+            <div>
+                <label for="img">Image: </label>
+                <input type="search" id="img" name="img" [(ngModel)]="duck.img">
+            </div>
+            <button>Save</button>
+        </form>
+        <img src="{{duck.img}}">
+    </section>
 </section>
