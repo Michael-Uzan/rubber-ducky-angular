@@ -1,0 +1,10 @@
+<section class="review-app-preview flex pointer " [routerLink]="['/rubber-ducks/products/details', review.to?.duckId]">
+    <img src="{{review.to?.duckImg}}">
+    <div>
+        <h3>By: {{review.name}}</h3>
+        <h3>To: {{review.to?.duckName}}</h3>
+        <p>{{review.description}}</p>
+        <rating [rating]="review.rating"></rating>
+        <small>{{review.at | dateDesk}}</small>
+    </div>
+</section>

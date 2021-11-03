@@ -78,11 +78,13 @@ export class ReviewService {
 
   constructor() { }
 
-  public loadReviews(duckId: string | undefined) {
+  public loadReviews(duckId: string | null = null) {
     if (duckId) {
-      let reviewsToShow = this._reviewsDb.filter((review) => review.to?.duckId === duckId);
-      this._reviews$.next(reviewsToShow)
+      var reviewsToShow = this._reviewsDb.filter((review) => review.to?.duckId === duckId);
+    } else {
+      var reviewsToShow = this._reviewsDb
     }
+    this._reviews$.next(reviewsToShow)
   }
 
   public addReview(review: IReview, duck: IDuck) {

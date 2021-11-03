@@ -1,0 +1,16 @@
+@import "../../../../styles.scss";
+.review-app-preview {
+    // max-width: 500px;
+    flex-direction: column;
+    margin-bottom: 30px;
+    &:hover {
+        opacity: 0.7;
+        background-color: rgba(0, 0, 0, 0.027);
+    }
+    img {
+        max-width: 200px;
+    }
+    @include for-super-narrow-layout {
+        flex-direction: row;
+    }
+}

@@ -6,17 +6,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { DuckResolverService } from './services/duck-resolver.service';
 import { DuckProductsComponent } from './pages/duck-products/duck-products.component';
 import { DuckEditComponent } from './pages/duck-edit/duck-edit.component';
+import { ReviewsAppComponent } from './pages/reviews-app/reviews-app.component';
 
 const routes: Routes = [
   {
     path: 'rubber-ducks', component: DuckAppComponent, children: [
       { path: 'products/details/:duckId', component: DuckDetailsComponent, resolve: { duck: DuckResolverService } },
       { path: 'products', component: DuckProductsComponent },
+      { path: 'reviews', component: ReviewsAppComponent },
     ]
   },
   { path: 'edit/:duckId', component: DuckEditComponent, resolve: { duck: DuckResolverService } },
   { path: 'edit', component: DuckEditComponent, resolve: { duck: DuckResolverService } },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({

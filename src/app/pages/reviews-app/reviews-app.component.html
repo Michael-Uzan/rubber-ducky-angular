@@ -1,0 +1,5 @@
+<section class="reviews-app">
+    <h1>Reviews</h1>
+    <review-app-list [reviews]="reviews | sort:'rating'"></review-app-list>
+    <p *ngElse>no reviews to show...</p>
+</section>

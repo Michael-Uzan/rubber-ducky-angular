@@ -25,6 +25,11 @@ import { AddReviewComponent } from './cmps/duck-details/add-review/add-review.co
 import { NaturalTypePipe } from './pipes/natural-type.pipe';
 import { FirstCapitalPipe } from './pipes/first-capital.pipe';
 import { DateDeskPipe } from './pipes/date-desk.pipe';
+import { ReviewsAppComponent } from './pages/reviews-app/reviews-app.component';
+import { ReviewAppListComponent } from './cmps/reviews-app/review-app-list/review-app-list.component';
+import { ReviewAppPreviewComponent } from './cmps/reviews-app/review-app-preview/review-app-preview.component';
+import { SortPipe } from './pipes/sort.pipe';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +53,10 @@ import { DateDeskPipe } from './pipes/date-desk.pipe';
     NaturalTypePipe,
     FirstCapitalPipe,
     DateDeskPipe,
+    ReviewsAppComponent,
+    ReviewAppListComponent,
+    ReviewAppPreviewComponent,
+    SortPipe,
   ],
   imports: [
     BrowserModule,

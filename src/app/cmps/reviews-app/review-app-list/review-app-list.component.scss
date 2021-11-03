@@ -1,0 +1,11 @@
+@import "../../../../styles.scss";
+
+.review-app {
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include for-normal-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
