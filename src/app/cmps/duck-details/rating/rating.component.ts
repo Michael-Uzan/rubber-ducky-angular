@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'rating',
@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
   @Input() rating: number
+  @Output() selectedRatingValue = new EventEmitter<number>()
   selectedRating: number
   stars = [
     {
@@ -42,11 +43,7 @@ export class RatingComponent implements OnInit {
   ngOnInit(): void {
     if (this.rating) {
       this.stars.filter((star) => {
-        if (star.id <= this.rating) {
-          star.class = 'star-gold star';
-        } else {
-          star.class = 'star-gray star';
-        }
+        star.class = (star.id <= this.rating) ? 'star-gold star' : 'star-gray star'
         return star;
       });
     } else {
@@ -56,28 +53,15 @@ export class RatingComponent implements OnInit {
 
 
   selectStar(value: number): void {
-
     // prevent multiple selection
-    if (this.selectedRating === 0) {
-
+    if (!this.rating) {
       this.stars.filter((star) => {
-
-        if (star.id <= value) {
-
-          star.class = 'star-gold star';
-
-        } else {
-
-          star.class = 'star-gray star';
-
-        }
-
+        star.class = ' star star-hover '
+        star.class += (star.id <= value) ? 'star-gold' : 'star-gray'
         return star;
       });
-
     }
-
     this.selectedRating = value;
-
+    this.selectedRatingValue.emit(this.selectedRating)
   }
 }

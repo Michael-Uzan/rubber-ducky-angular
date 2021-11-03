@@ -38,5 +38,6 @@ export class DuckDetailsComponent implements OnInit {
 
   ngOnDestroy() {
     this.routeDataSub.unsubscribe()
+    this.ducksSub.unsubscribe()
   }
 }

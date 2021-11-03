@@ -17,15 +17,26 @@ export class AddReviewComponent implements OnInit {
     description: '',
   }
   subscription: Subscription
-
+  isError: boolean = false
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit(): void {
   }
 
   async onSaveReview() {
-    if (!this.review.name || !this.review.description || this.review.rating) return
+    const { name, description, rating } = this.review
+    if (!name || !description || !rating) {
+      this.isError = true
+      return
+    }
     this.reviewService.addReview(this.review, this.duck)
+    this.reviewService.loadReviews(this.duck._id)
+    this.review = { name: '', rating: 0, description: '', }
+    this.isError = false
+  }
+
+  onSelectRating(value: number) {
+    this.review.rating = value
   }
 
 }

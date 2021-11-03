@@ -8,7 +8,8 @@
             <label for="description">Description: </label>
             <textarea name="description" id="description" [(ngModel)]="review.description"></textarea>
         </div>
-        <rating></rating>
+        <rating (selectedRatingValue)="onSelectRating($event)"></rating>
         <button>Add</button>
+        <p class="error" [hidden]="!isError"> **All field are required</p>
     </form>
 </section>

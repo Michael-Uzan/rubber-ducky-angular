@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.duckService.loadDucks()
     this.subscription = this.duckService.ducks$.subscribe(ducks => {
-      this.ducks = ducks.splice(6)
+      this.ducks = ducks.slice(6)
     })
   }
 }

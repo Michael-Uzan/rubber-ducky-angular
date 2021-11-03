@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { IDuck } from 'src/app/interfaces/IDuck.interface';
 import { IReview } from 'src/app/interfaces/IReview';
@@ -10,18 +11,28 @@ import { ReviewService } from 'src/app/services/review.service';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
-  @Input() duck: IDuck
+  // @Input() duck: IDuck
+  duck: IDuck
   reviews: IReview[]
   reviews$: Observable<IReview[]>
   subscription: Subscription
-
-  constructor(private reviewService: ReviewService) { }
+  routeDataSub: Subscription
+  constructor(private route: ActivatedRoute, private reviewService: ReviewService) { }
 
   ngOnInit(): void {
-    this.reviewService.loadReviews(this.duck._id)
-    this.subscription = this.reviewService.reviews$.subscribe(reviews => {
-      this.reviews = reviews
+    this.routeDataSub = this.route.data.subscribe(data => {
+      this.duck = data.duck
+      this.reviewService.loadReviews(this.duck._id)
+      this.subscription = this.reviewService.reviews$.subscribe(reviews => {
+        this.reviews = reviews
+      })
+
+
     })
+
+
+
+
   }
 
 }

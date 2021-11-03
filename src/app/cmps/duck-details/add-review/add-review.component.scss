@@ -24,6 +24,14 @@
         button {
             align-self: flex-end;
             background-color: $clr4;
+            margin-bottom: 5px;
+        }
+        .error {
+            align-self: flex-end;
+            padding: 0;
+            margin: 0;
+            color: $clr1;
+            font-size: rem(12px);
         }
     }
 }

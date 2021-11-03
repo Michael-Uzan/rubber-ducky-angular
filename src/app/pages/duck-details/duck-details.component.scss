@@ -3,11 +3,18 @@
 @import "../../../assets/styles/setup/functions";
 
 .duck-details {
+    // max-width: 700px;
     .product-details {
         flex-direction: column;
         margin-bottom: 15px;
+        > div {
+            margin-right: 35px;
+        }
         .price {
             padding: 0;
+        }
+        .duck-img {
+            max-width: 500px;
         }
         @include for-narrow-layout {
             flex-direction: row;
