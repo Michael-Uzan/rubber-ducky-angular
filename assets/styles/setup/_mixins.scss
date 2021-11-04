@@ -3,7 +3,7 @@
 /* Breakpoint mixins */
 
 @mixin for-mobile-layout {
-    @media (max-width: $mobile-breakpoint) {
+    @media (max-width: $tablet-breakpoint) {
         @content;
     }
 }
