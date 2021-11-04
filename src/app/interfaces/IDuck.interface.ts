@@ -1,5 +1,3 @@
-import { IReview } from "./IReview";
-
 export interface IDuck {
     _id?: string,
     name: string,

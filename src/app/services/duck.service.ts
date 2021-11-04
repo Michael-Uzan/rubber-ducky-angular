@@ -186,7 +186,7 @@ export class DuckService {
   }
 
 
-  public getDuckById(duckId: string) {
+  public getDuckById(duckId: string): Observable<IDuck> {
     const duck = this._ducksDb.find(duck => duck._id === duckId)
     //return an observable
     return duck ? of({ ...duck }) : throwError(new Error(`couldn't find duck with id ${duckId}`))

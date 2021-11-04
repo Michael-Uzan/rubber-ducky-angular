@@ -29,6 +29,8 @@ import { ReviewsAppComponent } from './pages/reviews-app/reviews-app.component';
 import { ReviewAppListComponent } from './cmps/reviews-app/review-app-list/review-app-list.component';
 import { ReviewAppPreviewComponent } from './cmps/reviews-app/review-app-preview/review-app-preview.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { CartComponent } from './pages/cart/cart.component';
+
 
 
 @NgModule({
@@ -57,13 +59,14 @@ import { SortPipe } from './pipes/sort.pipe';
     ReviewAppListComponent,
     ReviewAppPreviewComponent,
     SortPipe,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatIconModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

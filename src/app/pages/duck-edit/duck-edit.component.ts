@@ -33,5 +33,8 @@ export class DuckEditComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe()
   }
+  get isValid() {
+    return true
+  }
 
 }

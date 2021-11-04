@@ -11,8 +11,3 @@ export interface IReview {
     at?: number
 }
 
-// export interface IToDuck {
-//     duckId: string,
-//     duckName: string,
-//     img: string,
-// }

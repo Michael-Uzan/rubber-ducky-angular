@@ -2,15 +2,24 @@
   <div class="top-header flex align-center">
     <img src="./././assets/img/cart.jpg">
   </div>
-  <div class="botom-header">
+  <div class="botom-header {{menuOpenClass}}">
     <img class="logo pointer" src="./././assets/img/logo.JPG" routerLink="">
-    <nav>
+    <div class="screen" (click)="toggleMenu()"></div>
+    <nav class="flex">
       <a routerLink="/rubber-ducks/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        (click)="onShowAllDucks()">Ducks</a>
-      <a routerLink="user" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Cart</a>
-      <a routerLink="/rubber-ducks/reviews" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">Reviews</a>
+        (click)="onShowAllDucks()" (click)="toggleMenu()">
+        Ducks
+      </a>
+      <a routerLink="/rubber-ducks/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="toggleMenu()">
+        Cart
+      </a>
+      <a routerLink="/rubber-ducks/reviews" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="toggleMenu()">
+        Reviews
+      </a>
     </nav>
+    <button class="btn-menu-toggle" (click)="toggleMenu()">☰</button>
   </div>
 
 </header>
