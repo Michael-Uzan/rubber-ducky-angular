@@ -7,8 +7,12 @@
             <div class="{{inStock.class}}">{{inStock.txt }}</div>
             <p>{{duck.details}}</p>
             <div>
-                <button>Add to cart</button>
+                <form (ngSubmit)="onAddToCart()">
+                    <input type="number" name="quantity" [(ngModel)]="quantity" min="1" max="15" required>
+                    <button>Add to cart</button>
+                </form>
                 <button [routerLink]="['/edit', duck._id]">Edit</button>
+                <p class="user-msg {{userMsgClass}}"> items has been added to cart!</p>
             </div>
         </div>
 

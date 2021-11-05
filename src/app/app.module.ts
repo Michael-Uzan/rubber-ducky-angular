@@ -30,6 +30,9 @@ import { ReviewAppListComponent } from './cmps/reviews-app/review-app-list/revie
 import { ReviewAppPreviewComponent } from './cmps/reviews-app/review-app-preview/review-app-preview.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { CartComponent } from './pages/cart/cart.component';
+import { CartListComponent } from './cmps/cart/cart-list/cart-list.component';
+import { CartPreviewComponent } from './cmps/cart/cart-preview/cart-preview.component';
+import { CartTotalsComponent } from './cmps/cart/cart-totals/cart-totals.component';
 
 
 
@@ -60,6 +63,9 @@ import { CartComponent } from './pages/cart/cart.component';
     ReviewAppPreviewComponent,
     SortPipe,
     CartComponent,
+    CartListComponent,
+    CartPreviewComponent,
+    CartTotalsComponent,
   ],
   imports: [
     BrowserModule,

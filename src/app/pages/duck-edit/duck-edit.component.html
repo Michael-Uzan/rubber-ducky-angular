@@ -31,7 +31,7 @@
                 <label for="img">Image: </label>
                 <input type="search" id="img" name="img" [(ngModel)]="duck.img">
             </div>
-            <button [disabled]="isValid">Save</button>
+            <button [disabled]="!isValid">Save</button>
         </form>
         <img src="{{duck.img}}">
     </section>

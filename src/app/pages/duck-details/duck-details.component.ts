@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IDuck } from 'src/app/interfaces/IDuck.interface';
+import { CartService } from 'src/app/services/cart.service';
 import { DuckService } from 'src/app/services/duck.service';
 
 @Component({
@@ -15,7 +16,10 @@ export class DuckDetailsComponent implements OnInit {
   routeDataSub: Subscription
   ducksSub: Subscription
   relatedDucks: IDuck[]
-  constructor(private route: ActivatedRoute, private duckService: DuckService) { }
+  quantity: number = 1
+  isShowUserMsg: boolean = false
+
+  constructor(private route: ActivatedRoute, private duckService: DuckService, private cartService: CartService) { }
 
   async ngOnInit(): Promise<void> {
 
@@ -31,9 +35,27 @@ export class DuckDetailsComponent implements OnInit {
 
   }
 
+  onAddToCart() {
+    if (this.quantity <= 0) return
+    this.cartService.addToCart(this.duck, this.quantity)
+    this.showUserMsg()
+  }
+
   get inStock() {
     if (this.duck.inStock) return { txt: 'In Stock', class: 'green' }
     return { txt: 'Out Of Stock', class: 'red' }
+  }
+
+  get userMsgClass(): string {
+    if (this.isShowUserMsg) return 'display'
+    else return 'hidden'
+  }
+
+  private showUserMsg() {
+    this.isShowUserMsg = true
+    setTimeout(() => {
+      this.isShowUserMsg = false
+    }, 2000)
   }
 
   ngOnDestroy() {
