@@ -61,5 +61,41 @@ export const REVIEW_DATA: IReview[] = [
         description: "My Kids and my dog love it",
         at: 1635886984501
     },
+    {
+        _id: "sadasd89y3hrf",
+        to: {
+            duckId: "fufv8saddsat978yhjp9yh",
+            duckName: "Spidy Rubber Duck",
+            duckImg: "https://www.amsterdamduckstore.com/wp-content/uploads/2015/08/spidy-rubber-duck-front-e1569408181344.jpg",
+        },
+        name: "David",
+        rating: 3,
+        description: "cool toy, like it",
+        at: 1633886984501
+    },
+    {
+        _id: "gws809234rhrf",
+        to: {
+            duckId: "fufv8s09ujp9yh",
+            duckName: "Grim Reaper Rubber Duck",
+            duckImg: "https://www.amsterdamduckstore.com/wp-content/uploads/2018/09/Grim-Reaper-Rubber-Duck-front-Amsterdam-Duck-Store-.jpg",
+        },
+        name: "Maor",
+        rating: 1,
+        description: "I didnt like this toy. dont buy it!",
+        at: 1634889984345
+    },
+    {
+        _id: "gws6t5390guj4rhrf",
+        to: {
+            duckId: "12o6df8ye9d89eude346o",
+            duckName: "Snail Rubber Duck",
+            duckImg: "https://www.amsterdamduckstore.com/wp-content/uploads/2018/11/Snail-Rubber-Duck-front-Amsterdam-Duck-Store-400x400.jpg",
+        },
+        name: "David",
+        rating: 3,
+        description: "its okay, the rubber is not soft enough",
+        at: 1524889774345
+    },
 ]
 

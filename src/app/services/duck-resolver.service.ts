@@ -4,7 +4,6 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { IDuck } from '../interfaces/IDuck.interface';
 import { DuckService } from './duck.service';
 
