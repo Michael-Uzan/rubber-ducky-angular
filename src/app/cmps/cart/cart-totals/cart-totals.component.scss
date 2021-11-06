@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+
+.cart-totals {
+    h2 {
+        margin-bottom: 25px;
+    }
+    .table {
+        .titles {
+            margin-right: 50px;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        .total {
+            color: $clr4;
+            font-weight: 600;
+        }
+    }
+    .place-order {
+        max-width: 350px;
+        padding: 10px;
+        margin: 10px;
+        outline: 2px solid $clr1;
+        &:hover {
+            background-color: rgba(248, 163, 163, 0.52);
+            outline: 0;
+        }
+    }
+}

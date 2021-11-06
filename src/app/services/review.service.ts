@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { IDuck } from '../interfaces/IDuck.interface';
 import { IReview } from '../interfaces/IReview';
 
@@ -78,7 +78,7 @@ export class ReviewService {
 
   constructor() { }
 
-  public loadReviews(duckId: string | null = null) {
+  public loadReviews(duckId: string | null = null): void {
     if (duckId) {
       var reviewsToShow = this._reviewsDb.filter((review) => review.to?.duckId === duckId);
     } else {
@@ -87,8 +87,7 @@ export class ReviewService {
     this._reviews$.next(reviewsToShow)
   }
 
-  public addReview(review: IReview, duck: IDuck) {
-    //mock the server work
+  public addReview(review: IReview, duck: IDuck): Observable<IReview> {
     const newReview: IReview = {
       _id: this._makeId(),
       at: Date.now(),
@@ -99,12 +98,12 @@ export class ReviewService {
       },
       ...review
     }
-    this._reviewsDb.push(newReview)
+    this._reviewsDb.unshift(newReview)
     this._reviews$.next(this._reviewsDb)
     return of(newReview)
   }
 
-  private _makeId(length = 24) {
+  private _makeId(length = 24): string {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {

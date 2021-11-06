@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { DuckService } from 'src/app/services/duck.service';
 
 @Component({
@@ -7,10 +8,17 @@ import { DuckService } from 'src/app/services/duck.service';
   styleUrls: ['./app-header.component.scss']
 })
 export class AppHeaderComponent implements OnInit {
+  // cartItems$: Observable<ICartItem[][]>
+  // subscription: Subscription
   isMenuOpen: boolean = false
-  constructor(private duckService: DuckService) { }
+
+  constructor(private duckService: DuckService, private cartService: CartService) { }
 
   ngOnInit() {
+    // this.cartService.loadCart()
+    // this.subscription = this.cartService.cartItems$.subscribe(cartItems => {
+    //   this.cartItems = cartItems
+    // })
   }
 
   toggleMenu() {
@@ -22,6 +30,10 @@ export class AppHeaderComponent implements OnInit {
     return ''
   }
 
+  get cartLength() {
+    return this.cartService.cartLength()
+  }
+
   onShowAllDucks() {
     this.duckService.setFilter({
       name: '',
@@ -30,5 +42,11 @@ export class AppHeaderComponent implements OnInit {
       category: '',
     })
   }
+
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe()
+  // }
+
 
 }

@@ -1,18 +1,18 @@
 <section class="cart-totals">
     <h2>Cart totals</h2>
-    <div class="flex">
-        <ul class="clean-list">
+    <div class="table flex">
+        <ul class="titles clean-list">
             <li>Subtotal</li>
             <li>Shpping</li>
             <li>Total</li>
         </ul>
         <ul class="clean-list">
             <li>€ {{cartTotalPrice}}</li>
-            <li>Standard Shipping: € 21,30</li>
-            <li>€ {{cartTotalPrice+21.30}}</li>
+            <li>Standard: € 21,30</li>
+            <li class="total">€ {{cartTotalPrice+21.30}}</li>
         </ul>
     </div>
-    <div (click)="onPlaceOrder()">
+    <div class="place-order flex align-center justify-center pointer" (click)="onPlaceOrder()">
         Place Order
     </div>
 </section>

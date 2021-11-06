@@ -1,0 +1,42 @@
+@import "../../../../styles.scss";
+
+.cart-preview {
+    & > div {
+        gap: 20px;
+        width: 100%;
+        justify-content: space-around;
+        margin-right: 20px;
+    }
+    flex-direction: column;
+    margin-bottom: 20px;
+    button {
+        background-color: #fff;
+        color: $clr1;
+        &:hover {
+            background-color: $clr1;
+            color: white;
+            border-radius: 50%;
+        }
+    }
+
+    img {
+        width: 100px;
+    }
+    p {
+        padding: 0;
+    }
+    input {
+        max-width: 50px;
+        padding: 5px;
+        background-color: rgba(194, 193, 193, 0.63);
+        border: 0;
+    }
+
+    @include for-narrow-layout {
+        flex-direction: row;
+        & > div {
+            width: unset;
+            justify-content: unset;
+        }
+    }
+}

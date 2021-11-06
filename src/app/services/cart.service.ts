@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ICartItem } from '../interfaces/ICartItem.interface';
 import { IDuck } from '../interfaces/IDuck.interface';
 
@@ -36,16 +36,16 @@ export class CartService {
 
   constructor() { }
 
-  public loadCart() {
+  public loadCart(): void {
     this._cartItems$.next(this._cartItems)
   }
 
-  public deleteItem(id: string | undefined) {
+  public deleteItem(id: string | undefined): void {
     this._cartItems = this._cartItems.filter(cartItem => cartItem.item._id !== id)
     this._cartItems$.next(this._cartItems)
   }
 
-  public addToCart(duck: IDuck, quantity: number) {
+  public addToCart(duck: IDuck, quantity: number): Observable<ICartItem[]> {
 
     const existsItem = this._cartItems.find(cartItem => cartItem.item._id === duck._id)
     if (existsItem) existsItem.quantity += quantity
@@ -58,24 +58,24 @@ export class CartService {
     return of(this._cartItems)
   }
 
-  public clearCart() {
+  public clearCart(): void {
     this._cartItems = []
     this._cartItems$.next(this._cartItems)
   }
 
-  public cartLength() {
+  public cartLength(): number {
     return this._cartItems.reduce((acc, cartItem) => {
       return acc + cartItem.quantity
     }, 0)
   }
 
-  public cartTotalPrice() {
+  public cartTotalPrice(): number {
     return this._cartItems.reduce((acc, cartItem) => {
       return acc + (cartItem.quantity * cartItem.item.price)
     }, 0)
   }
 
-  private createNewCartItem(duck: IDuck) {
+  private createNewCartItem(duck: IDuck): ICartItem {
     return {
       item: {
         _id: duck._id,

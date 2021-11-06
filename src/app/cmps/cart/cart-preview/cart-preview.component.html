@@ -1,8 +1,12 @@
-<section class="cart-preview">
-    <button (click)="onDeleteItem()">X</button>
-    <img src="{{cartItem.item.img}}">
-    <p>{{cartItem.item.name}}</p>
-    <p>€ {{cartItem.item.price}}</p>
-    <input type="number" name="quantity" [(ngModel)]="cartItem.quantity">
-    <p>€{{itemSubtotal}}</p>
+<section class="cart-preview flex align-center">
+    <div class="flex align-center ">
+        <button (click)="onDeleteItem()">X</button>
+        <img class="pointer" (click)="onItemClick()" src="{{cartItem.item.img}}">
+        <p class="pointer" (click)="onItemClick()">{{cartItem.item.name}}</p>
+    </div>
+    <div class="flex align-center">
+        <p>Price: € {{cartItem.item.price}}</p>
+        <input type="number" name="quantity" [(ngModel)]="cartItem.quantity" min="1">
+        <p>Subtotal: € {{itemSubtotal}}</p>
+    </div>
 </section>

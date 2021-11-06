@@ -31,12 +31,16 @@ export class AddReviewComponent implements OnInit {
     }
     this.reviewService.addReview(this.review, this.duck)
     this.reviewService.loadReviews(this.duck._id)
-    this.review = { name: '', rating: 0, description: '', }
-    this.isError = false
+    this.resetForm()
   }
 
   onSelectRating(value: number) {
     this.review.rating = value
+  }
+
+  resetForm() {
+    this.review = { name: '', rating: 0, description: '', }
+    this.isError = false
   }
 
 }

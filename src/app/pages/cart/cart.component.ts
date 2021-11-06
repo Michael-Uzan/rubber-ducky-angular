@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   cartItems: ICartItem[]
   cartItems$: Observable<ICartItem[][]>
   subscription: Subscription
-
+  isModalOpen: boolean = false
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -22,9 +22,21 @@ export class CartComponent implements OnInit {
     })
   }
 
+  onPlaceOrder(): void {
+    this.cartService.clearCart()
+    this.isModalOpen = true
+    setTimeout(() => {
+      this.isModalOpen = false
+    }, 3000)
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false
+  }
 
 
-  ngOnDestroy() {
+
+  ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
 

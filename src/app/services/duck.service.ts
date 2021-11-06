@@ -166,7 +166,7 @@ export class DuckService {
   }
 
 
-  public loadDucks() {
+  public loadDucks(): void {
     const filterBy = this._filterBy$.getValue()
     const regex = new RegExp(filterBy.name, "i");
     let ducksToShow = this._ducksDb.filter((duck) => {
@@ -180,7 +180,7 @@ export class DuckService {
     this._ducks$.next(this._sort(ducksToShow))
   }
 
-  public setFilter(filterBy: IFilterBy) {
+  public setFilter(filterBy: IFilterBy): void {
     this._filterBy$.next(filterBy)
     this.loadDucks()
   }
@@ -192,7 +192,7 @@ export class DuckService {
     return duck ? of({ ...duck }) : throwError(new Error(`couldn't find duck with id ${duckId}`))
   }
 
-  public getEmptyDuck() {
+  public getEmptyDuck(): IDuck {
     return {
       name: '',
       price: 12,
@@ -210,11 +210,11 @@ export class DuckService {
   //   this._ducks$.next(this._ducksDb)
   // }
 
-  public save(duck: IDuck) {
+  public save(duck: IDuck): Observable<IDuck> {
     return duck._id ? this._updateDuck(duck) : this._addDuck(duck)
   }
 
-  private _updateDuck(duck: IDuck) {
+  private _updateDuck(duck: IDuck): Observable<IDuck> {
     //mock the server work
     this._ducksDb = this._ducksDb.map(c => duck._id === c._id ? duck : c)
     // change the observable data in the service - let all the subscribers know
@@ -222,7 +222,7 @@ export class DuckService {
     return of(duck)
   }
 
-  private _addDuck(duck: IDuck) {
+  private _addDuck(duck: IDuck): Observable<IDuck> {
     //mock the server work
     const newDuck: IDuck = {
       _id: this._makeId(),
@@ -255,7 +255,7 @@ export class DuckService {
   //     })
   //   }
 
-  private _makeId(length = 24) {
+  private _makeId(length = 24): string {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {

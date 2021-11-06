@@ -33,6 +33,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartListComponent } from './cmps/cart/cart-list/cart-list.component';
 import { CartPreviewComponent } from './cmps/cart/cart-preview/cart-preview.component';
 import { CartTotalsComponent } from './cmps/cart/cart-totals/cart-totals.component';
+import { CartOrderMsgComponent } from './cmps/cart/cart-order-msg/cart-order-msg.component';
 
 
 
@@ -66,6 +67,7 @@ import { CartTotalsComponent } from './cmps/cart/cart-totals/cart-totals.compone
     CartListComponent,
     CartPreviewComponent,
     CartTotalsComponent,
+    CartOrderMsgComponent,
   ],
   imports: [
     BrowserModule,

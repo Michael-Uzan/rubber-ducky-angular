@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -8,18 +8,19 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartTotalsComponent implements OnInit {
 
+  @Output() openModalOrder = new EventEmitter<void>()
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }
 
-  get cartTotalPrice() {
+  get cartTotalPrice(): number {
     return this.cartService.cartTotalPrice()
   }
 
   onPlaceOrder() {
-    this.cartService.clearCart()
-    // Open Modal
+    this.openModalOrder.emit()
   }
 
 

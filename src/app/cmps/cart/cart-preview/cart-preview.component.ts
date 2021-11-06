@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICartItem } from 'src/app/interfaces/ICartItem.interface';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -10,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartPreviewComponent implements OnInit {
   @Input() cartItem: ICartItem
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,11 @@ export class CartPreviewComponent implements OnInit {
 
   onDeleteItem() {
     this.cartService.deleteItem(this.cartItem.item._id)
+  }
+
+  onItemClick() {
+    this.router.navigateByUrl(`/rubber-ducks/products/details/${this.cartItem.item._id}`)
+    // [routerLink] = "['/rubber-ducks/products/details', duck._id]"
   }
 
 
