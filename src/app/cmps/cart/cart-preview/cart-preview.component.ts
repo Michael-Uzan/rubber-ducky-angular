@@ -26,7 +26,6 @@ export class CartPreviewComponent implements OnInit {
 
   onItemClick() {
     this.router.navigateByUrl(`/rubber-ducks/products/details/${this.cartItem.item._id}`)
-    // [routerLink] = "['/rubber-ducks/products/details', duck._id]"
   }
 
 

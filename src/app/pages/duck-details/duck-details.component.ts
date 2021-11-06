@@ -28,9 +28,7 @@ export class DuckDetailsComponent implements OnInit {
     })
     this.routeDataSub = this.route.data.subscribe(data => {
       this.duck = data.duck
-      this.relatedDucks = this.ducks.filter(duck => {
-        return ((duck.category === this.duck.category) && (duck._id !== this.duck._id))
-      })
+      this.relatedDucks = this.duckService.getRelatedDucks(this.duck)
     })
 
   }
@@ -42,8 +40,8 @@ export class DuckDetailsComponent implements OnInit {
   }
 
   get inStock() {
-    if (this.duck.inStock) return { txt: 'In Stock', class: 'green' }
-    return { txt: 'Out Of Stock', class: 'red' }
+    if (this.duck.inStock) return { txt: 'In Stock', class: 'in-stock' }
+    return { txt: 'Out Of Stock', class: 'out-of-stock' }
   }
 
   get userMsgClass(): string {

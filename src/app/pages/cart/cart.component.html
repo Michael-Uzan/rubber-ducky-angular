@@ -2,7 +2,7 @@
     <h1>Cart</h1>
     <cart-list *ngIf="cartItems.length" [cartItems]="cartItems"></cart-list>
     <cart-totals *ngIf="cartItems.length" (openModalOrder)="onPlaceOrder()"></cart-totals>
-    <div *ngIf="!cartItems.length">Sorry no items to show... <br>
+    <div class="no-items" *ngIf="!cartItems.length">Sorry no items to show... <br>
         Try to add new items to cart</div>
     <cart-order-msg *ngIf="isModalOpen" (closeModalOrder)="closeModal()"></cart-order-msg>
 </section>

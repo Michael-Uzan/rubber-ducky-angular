@@ -33,8 +33,13 @@ export class DuckEditComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe()
   }
-  get isValid() {
-    return true
+  get isValid(): boolean {
+    return (!this.duck.name || !this.duck.price)
+  }
+
+  get errorClass(): string {
+    if (this.isValid) return 'valid'
+    else return 'not-valid'
   }
 
 }

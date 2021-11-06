@@ -7,11 +7,13 @@
             <div class="{{inStock.class}}">{{inStock.txt }}</div>
             <p>{{duck.details}}</p>
             <div>
-                <form (ngSubmit)="onAddToCart()">
-                    <input type="number" name="quantity" [(ngModel)]="quantity" min="1" max="15" required>
-                    <button>Add to cart</button>
-                </form>
-                <button [routerLink]="['/edit', duck._id]">Edit</button>
+                <div class="flex btns">
+                    <form (ngSubmit)="onAddToCart()" *ngIf="duck.inStock">
+                        <input type="number" name="quantity" [(ngModel)]="quantity" min="1" max="15" required>
+                        <button>Add to cart</button>
+                    </form>
+                    <button [routerLink]="['/edit', duck._id]">Edit</button>
+                </div>
                 <p class="user-msg {{userMsgClass}}"> items has been added to cart!</p>
             </div>
         </div>

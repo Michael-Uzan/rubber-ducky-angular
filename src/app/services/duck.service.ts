@@ -185,6 +185,21 @@ export class DuckService {
     this.loadDucks()
   }
 
+  public resetFilter(): void {
+    this.setFilter({
+      name: '',
+      maxPrice: 30,
+      onlyInStock: false,
+      category: '',
+    })
+  }
+
+  public getRelatedDucks(relatedDuck: IDuck): IDuck[] {
+    return this._ducksDb.filter(duck => {
+      return ((duck.category === relatedDuck.category) && (duck._id !== relatedDuck._id))
+    })
+  }
+
 
   public getDuckById(duckId: string): Observable<IDuck> {
     const duck = this._ducksDb.find(duck => duck._id === duckId)

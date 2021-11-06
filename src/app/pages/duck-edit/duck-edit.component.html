@@ -28,10 +28,11 @@
                 <textarea name="details" id="details" [(ngModel)]="duck.details"></textarea>
             </div>
             <div>
-                <label for="img">Image: </label>
+                <label for="img">Image link: </label>
                 <input type="search" id="img" name="img" [(ngModel)]="duck.img">
             </div>
-            <button [disabled]="!isValid">Save</button>
+            <button [disabled]="isValid">Save</button>
+            <p class="error {{errorClass}}">** all field are required</p>
         </form>
         <img src="{{duck.img}}">
     </section>

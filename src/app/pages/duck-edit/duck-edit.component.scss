@@ -45,5 +45,19 @@
                 margin-right: 10px;
             }
         }
+        button:disabled {
+            opacity: 0.3;
+            background-color: $clr1;
+            cursor: not-allowed;
+        }
+        .error {
+            color: $clr1;
+            &.valid {
+                display: block;
+            }
+            &.not-valid {
+                display: none;
+            }
+        }
     }
 }

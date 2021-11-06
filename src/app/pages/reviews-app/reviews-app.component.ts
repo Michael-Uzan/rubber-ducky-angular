@@ -20,7 +20,6 @@ export class ReviewsAppComponent implements OnInit {
     this.subscription = this.reviewService.reviews$.subscribe(reviews => {
       this.reviews = reviews
     })
-    console.log('reviews', this.reviews)
   }
 
 }

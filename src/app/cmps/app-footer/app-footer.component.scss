@@ -23,6 +23,15 @@
             }
         }
     }
+    .social-links {
+        margin-bottom: 25px;
+        img {
+            width: 25px;
+        }
+        li {
+            margin-right: 20px;
+        }
+    }
     .bottom-footer {
         background-color: $clr2;
         height: 50px;

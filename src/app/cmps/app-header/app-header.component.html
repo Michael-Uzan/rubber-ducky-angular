@@ -1,8 +1,10 @@
 <header class="main-header ">
-  <div class="top-header flex align-center">
-    <div class="cart-icon flex direction-row align-center pointer" routerLink="/rubber-ducks/cart">
-      <img src="./././assets/img/cart.jpg">
-      <h4>{{cartLength || ''}}</h4>
+  <div class="top-header flex align-center full ">
+    <div class="cart-container">
+      <div class="cart-icon flex direction-row align-center pointer" routerLink="/rubber-ducks/cart">
+        <img src="./././assets/img/cart.jpg">
+        <h4>{{cartLength }}</h4>
+      </div>
     </div>
   </div>
   <div class="botom-header {{menuOpenClass}}">
@@ -10,16 +12,20 @@
     <div class="screen" (click)="toggleMenu()"></div>
     <nav class="flex">
       <a routerLink="/rubber-ducks/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        (click)="onShowAllDucks()" (click)="toggleMenu()">
+        (click)="onShowAllDucks()" (click)="toggleMenu()" href="#top">
         Ducks
       </a>
       <a routerLink="/rubber-ducks/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        (click)="toggleMenu()">
+        (click)="toggleMenu()" href="#top">
         Cart
       </a>
       <a routerLink="/rubber-ducks/reviews" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        (click)="toggleMenu()">
+        (click)="toggleMenu()" href="#top">
         Reviews
+      </a>
+      <a class="add-duck" routerLink="/edit" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="toggleMenu()" href="#top">
+        Add duck
       </a>
     </nav>
     <button class="btn-menu-toggle" (click)="toggleMenu()">☰</button>

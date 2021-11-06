@@ -17,13 +17,9 @@ export class SideBarFilterComponent implements OnInit {
   constructor(private duckService: DuckService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    // this.subscription = this.duckService.filterBy$.subscribe(filterBy => {
-    //   this.filterBy = filterBy
-    // })
   }
 
   onChooseCategory(category: string) {
-    console.log('this.route', this.route)
     this.router.navigateByUrl('/rubber-ducks/products')
     this.duckService.setFilter({
       name: '',

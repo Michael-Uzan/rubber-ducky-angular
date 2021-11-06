@@ -4,14 +4,23 @@
     margin-bottom: 40px;
     .top-header {
         height: 45px;
-        img {
-            justify-self: flex-end;
-            color: white;
-            max-width: 30px;
-        }
         background-color: $clr1;
+        justify-content: flex-end;
+        .cart-icon {
+            margin-right: 35px;
+            img {
+                max-width: 30px;
+            }
+            h4 {
+                margin: 0;
+                color: white;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+        }
     }
     .botom-header {
+        padding-top: 45px;
         display: flex;
         justify-content: space-between;
         .logo {

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   cartItems: ICartItem[]
   cartItems$: Observable<ICartItem[][]>
   subscription: Subscription
-  isModalOpen: boolean = false
+  isModalOpen: boolean = false;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {

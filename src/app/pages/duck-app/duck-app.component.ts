@@ -13,7 +13,7 @@ export class DuckAppComponent implements OnInit {
 
   filterBy: IFilterBy = {
     name: '',
-    maxPrice: 100000,
+    maxPrice: 30,
     onlyInStock: false,
     category: '',
   }

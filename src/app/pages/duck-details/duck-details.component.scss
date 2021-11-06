@@ -32,6 +32,12 @@
                 opacity: 0;
             }
         }
+        .btns {
+            input {
+                width: 40px;
+                margin-right: 15px;
+            }
+        }
     }
     .visa {
         max-width: 400px;
@@ -47,10 +53,10 @@
         }
     }
 
-    .red {
+    .out-of-stock {
         color: $clr1;
     }
-    .green {
+    .in-stock {
         color: $clr3;
     }
 }
