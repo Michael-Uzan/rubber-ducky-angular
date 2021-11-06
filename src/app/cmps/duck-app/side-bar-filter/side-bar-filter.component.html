@@ -1,9 +1,6 @@
 <aside class="side-bar">
     <h4>Choose rubber ducks by:</h4>
-    <ul class="clean-list">
-        <li (click)="onChooseCategory('')">All</li>
-        <li (click)="onChooseCategory('scary')">Scary</li>
-        <li (click)="onChooseCategory('music')">Music</li>
-        <li (click)="onChooseCategory('countries')">Countries</li>
+    <ul class="clean-list" *ngFor="let category of categories; let idx = index">
+        <li (click)="onChooseCategory(idx)"><a href="#top">{{category}}</a></li>
     </ul>
 </aside>

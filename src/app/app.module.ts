@@ -22,7 +22,6 @@ import { ReviewPreviewComponent } from './cmps/duck-details/review-preview/revie
 import { RatingComponent } from './cmps/duck-details/rating/rating.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddReviewComponent } from './cmps/duck-details/add-review/add-review.component';
-import { NaturalTypePipe } from './pipes/natural-type.pipe';
 import { FirstCapitalPipe } from './pipes/first-capital.pipe';
 import { DateDeskPipe } from './pipes/date-desk.pipe';
 import { ReviewsAppComponent } from './pages/reviews-app/reviews-app.component';
@@ -56,7 +55,6 @@ import { CartOrderMsgComponent } from './cmps/cart/cart-order-msg/cart-order-msg
     ReviewPreviewComponent,
     RatingComponent,
     AddReviewComponent,
-    NaturalTypePipe,
     FirstCapitalPipe,
     DateDeskPipe,
     ReviewsAppComponent,

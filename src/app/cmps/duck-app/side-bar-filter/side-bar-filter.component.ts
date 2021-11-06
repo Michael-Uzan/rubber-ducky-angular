@@ -11,7 +11,7 @@ import { DuckService } from 'src/app/services/duck.service';
 })
 export class SideBarFilterComponent implements OnInit {
 
-
+  categories: string[] = ['', 'scary', 'music', 'countries', 'animals', 'sport', 'halloween', 'heroes']
   subscription: Subscription
 
   constructor(private duckService: DuckService, private route: ActivatedRoute, private router: Router) { }
@@ -19,13 +19,13 @@ export class SideBarFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChooseCategory(category: string) {
+  onChooseCategory(idx: number) {
     this.router.navigateByUrl('/rubber-ducks/products')
     this.duckService.setFilter({
       name: '',
-      maxPrice: 100000,
+      maxPrice: 30,
       onlyInStock: false,
-      category,
+      category: this.categories[idx],
     })
   }
 }

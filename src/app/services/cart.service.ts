@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ICartItem } from '../interfaces/ICartItem.interface';
 import { IDuck } from '../interfaces/IDuck.interface';
+import { CART_DATA } from "../data/cart.data";
 
 @Injectable({
   providedIn: 'root'
@@ -9,27 +10,7 @@ import { IDuck } from '../interfaces/IDuck.interface';
 export class CartService {
 
   // Dummy Data mock items on cart
-  private _cartItems: ICartItem[] = [
-    {
-      item: {
-        _id: "os566nbkirf443a5d64b32ca",
-        name: "Frankenstein Rubber Duck",
-        price: 9.50,
-        img: "./assets/img/ducks/frankenstein.JPG",
-      },
-      quantity: 2,
-    },
-    {
-      item: {
-        _id: "2a5664025f6ae9aa24a99aer",
-        name: "I Love Pizza Rubber Duck",
-        price: 9.50,
-        img: "./assets/img/ducks/i-love-pizza.JPG",
-      },
-      quantity: 1,
-    }
-
-  ];
+  private _cartItems: ICartItem[] = CART_DATA
 
   private _cartItems$ = new BehaviorSubject<ICartItem[]>([])
   public cartItems$ = this._cartItems$.asObservable()
