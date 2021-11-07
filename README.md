@@ -13,6 +13,7 @@
  
  <h3>Technologies:</h3>
  
+ - Angular Framework
  - Models / Interface
  - Pipes
  - Observables
