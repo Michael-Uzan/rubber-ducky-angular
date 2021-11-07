@@ -1,6 +1,6 @@
 <h1 align="center">Rubber Ducky - Frontend Angular Project</h1>
 <a  href="https://michael-uzan.github.io/rubber-ducky-angular/#/"> Link to Rubber Ducky  </a>
-<h3 align="left">This Frontend Project is a clone to Amsterdam Duck Stroe online shop. <br/>
+<h3 align="left">This Frontend Angular Project is a clone to Amsterdam Duck Stroe online shop. <br/>
   The goal of this project is to simulate a full shoping experince. <br/>
   </h3>
   
