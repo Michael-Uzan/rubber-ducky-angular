@@ -29,6 +29,11 @@
 <a href="https://linkedin.com/in/michael-uzan-ab637071" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="michael-uzan-ab637071" height="30" width="40" /></a>
 </p>
 
+<img align="left" src="https://res.cloudinary.com/looply/image/upload/v1636456221/666_xfken0.jpg"  />
+
+<img align="left" src="https://res.cloudinary.com/looply/image/upload/v1636456221/ss_v4se7r.jpg"  />
+
+<img align="left" src="https://res.cloudinary.com/looply/image/upload/v1636456222/ttt_hwvyrv.jpg"  />
 
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=michael-uzan&show_icons=true&locale=en&layout=compact" alt="michael-uzan" /></p>
